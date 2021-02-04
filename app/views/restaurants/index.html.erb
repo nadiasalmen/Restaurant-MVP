@@ -6,7 +6,7 @@
   <% end %>
   <div class="container border border-secondary my-3"></div>
   <% @restaurants.each do |restaurant| %>
-    <h2><%= link_to restaurant.name, restaurants_path, :class => "text-info"  %></h2>
+    <h2><%= link_to restaurant.name, restaurant_path(restaurant), :class => "text-info"  %></h2>
     <p><%= restaurant.address %></p>
   <% end %>
 </div>

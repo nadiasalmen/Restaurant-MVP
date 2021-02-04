@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post 'restaurants', to: 'restaurants#create'
 
   # Read one - show must go after the "new" routes
+  get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
 end
