@@ -17,7 +17,8 @@ puts 'Creating new restaurants'
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
     phone_number: Faker::PhoneNumber.cell_phone,
-    category: %w[chinese italian japanese french belgian].sample
+    category: %w[chinese italian japanese french belgian].sample,
+    chef_name: %w[Dumas Lepes Petrona Mallmann Massey Botana].sample
   )
   restaurant.save!
   puts "Created restaurant with id #{restaurant.id}"

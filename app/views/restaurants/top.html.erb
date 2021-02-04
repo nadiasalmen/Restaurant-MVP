@@ -1,0 +1,8 @@
+<div class="container col-5 py-3">
+  <h1 class="my-3 font-weight-bolder text-info">Best Restaurants</h1>
+  <div class="container border border-secondary my-3"></div>
+  <% @restaurants.each do |restaurant| %>
+    <h2><%= link_to restaurant.name, restaurant_path(restaurant), :class => "text-info"  %></h2>
+    <p><%= restaurant.category %></p>
+  <% end %>
+</div>
