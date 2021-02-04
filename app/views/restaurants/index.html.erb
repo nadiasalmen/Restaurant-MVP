@@ -1,0 +1,6 @@
+<div class="container col-5 py-3">
+  <% @restaurants.each do |restaurant| %>
+    <h2><%= link_to restaurant.name, restaurants_path, :class => "text-info"  %></h2>
+    <p><%= restaurant.address %></p>
+  <% end %>
+</div>
