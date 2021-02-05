@@ -1,4 +1,4 @@
-<div class="container col-5 py-3">
+<div class="container col-8 py-3">
   <div class="d-flex justify-content-start aling-items-center">
     <h2 class="text-info my-0 mr-2"><%= @restaurant.name %></h2>
   </div>
@@ -12,6 +12,6 @@
   <h2>Reviews</h2>
   <% @restaurant.reviews.each do |review| %>
     <p><%= review.content %></p>
-    <p><%= review.rating %> Stars</p>
+    <p><%= sanitize star_rating(review.rating) %></p>
   <% end %>
 </div>

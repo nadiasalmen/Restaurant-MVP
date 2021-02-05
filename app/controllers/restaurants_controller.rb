@@ -21,11 +21,16 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def top
+  def italian
     @restaurants = Restaurant.where(category: 'italian')
   end
 
   def chef
+  end
+
+  def top
+    # @top_restaurants = Restaurant.where('average_rating > ?', 2).order(average_rating: :desc)
+    @top_restaurants = Restaurant.order(average_rating: :desc).limit(5)
   end
 
   private

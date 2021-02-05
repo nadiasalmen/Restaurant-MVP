@@ -12,7 +12,7 @@ Restaurant.destroy_all
 
 puts 'Creating new restaurants'
 
-5.times do
+30.times do
   restaurant = Restaurant.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
@@ -23,7 +23,7 @@ puts 'Creating new restaurants'
   restaurant.save!
   puts "Created restaurant with id #{restaurant.id}"
   puts "Creating reviews for restaurant #{restaurant.id}"
-  10.times do
+  rand(7..14).times do
     review = Review.new(
       rating: rand(0..5),
       content: Faker::Restaurant.review,
@@ -31,6 +31,8 @@ puts 'Creating new restaurants'
     )
     review.save!
   end
+  restaurant.average_rating
+  restaurant.save!
 end
 
 puts 'Finished!'

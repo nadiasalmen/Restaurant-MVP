@@ -1,8 +1,15 @@
-<div class="container col-5 py-3">
-  <h1 class="my-3 font-weight-bolder text-info">Best Restaurants</h1>
+<div class="container col-8 py-3">
+  <h1 class="my-3 font-weight-bolder text-info">Top 5 Restaurants</h1>
   <div class="container border border-secondary my-3"></div>
-  <% @restaurants.each do |restaurant| %>
+  <% @top_restaurants.each do |restaurant| %>
     <h2><%= link_to restaurant.name, restaurant_path(restaurant), :class => "text-info"  %></h2>
-    <p><%= restaurant.category %></p>
+    <p>Address: <%= restaurant.address %></p>
+    <p>Average rating: <%= sanitize star_rating(restaurant.average_rating) %></p>
+    <p><strong>Latest Reviews</strong></p>
+    <% restaurant.reviews.first(3).each do |review| %>
+      <p><em><%= Date.today.strftime("%d/%m/%y") %></em>: <%= review.content %></p>
+    <% end %>
+
   <% end %>
+  <%= link_to 'Back to main list', restaurants_path, :class => "btn btn-outline-info mt-2"  %>
 </div>

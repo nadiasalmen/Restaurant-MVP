@@ -12,10 +12,10 @@ Rails.application.routes.draw do
     # get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
 
     collection do
-      get 'top'
+      get 'italian'
     end
     # es como agregar
-    # get 'restaurants/top', to: "restaurants#top", as: :top_restaurants
+    # get 'restaurants/italian', to: "restaurants#italian", as: :italian_restaurants
 
     member do
       get 'chef'
@@ -25,5 +25,10 @@ Rails.application.routes.draw do
 
     # Nested routes
     resources :reviews, only: %i[new create]
+
+    # collection top
+    collection do
+      get 'top'
+    end
   end
 end

@@ -1,6 +1,7 @@
-<div class="container col-5 py-3">
+<div class="container col-8 py-3">
   <h1 class="my-3 font-weight-bolder text-info">Restaurants</h1>
   <div class="container border border-secondary my-3"></div>
+  <h2><%= link_to "Italian Restaurants", italian_restaurants_path, :class => "text-info"  %></h2>
   <h2><%= link_to "Top Restaurants", top_restaurants_path, :class => "text-info"  %></h2>
   <div class="container border border-secondary my-3"></div>
   <%= link_to new_restaurant_path do %>
